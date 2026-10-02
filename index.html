@@ -1,8 +1,496 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#5c3025"><title>Alegrelinguo — Alegre Menu Training</title><link rel="stylesheet" href="styles.css"></head><body>
-<header class="sitebar"><a class="logo" href="#" aria-label="Alegrelinguo home"><img src="https://alegredining.com.au/wp-content/uploads/2023/02/cropped-SMALL-ALEGRA-1-3-1.png.webp" alt="Alegre Bar & Dining"><span>LINGUO</span></a><nav><span>MENU TRAINING</span><button id="reset" class="navbtn">RESET PROGRESS</button></nav></header>
-<main><section id="home" class="screen active"><div class="venue-hero"><img src="https://alegredining.com.au/wp-content/uploads/2023/03/2-1-e1700700308642-768x652.png.webp" alt="Alegre Bar & Dining interior"><div class="shade"></div><div class="hero-copy"><span class="eyebrow">STAFF MENU TRAINING</span><h1>Know the menu.<br><em>Own the floor.</em></h1><p>Built for new starters at Alegre Bar & Dining. Drill dishes, ingredients, dietary tags, banquets and signature beverages before service.</p><a href="#trainer" class="hero-button">START TRAINING ↓</a></div></div>
-<section class="intro"><div><span class="eyebrow dark">ALEGRELINGUO</span><h2>Learn Alegre,<br>one plate at a time.</h2></div><div><p>500 multiple-choice drills built from Alegre's published à la carte, banquet and beverage menus. Short sessions make it easy to practise before a shift.</p><div class="stats"><div><b id="learned">0</b><span>MASTERED</span></div><div><b id="accuracy">—</b><span>ACCURACY</span></div><div><b id="bestStreak">0</b><span>BEST STREAK</span></div></div></div></section>
-<section id="trainer" class="training"><div class="training-head"><span class="eyebrow">CHOOSE YOUR SHIFT</span><h2>What are we drilling?</h2></div><div class="modes"><button data-mode="all"><span>01</span><strong>Mixed Shift</strong><small>Everything, shuffled</small></button><button data-mode="food"><span>02</span><strong>À La Carte</strong><small>Dishes, ingredients & details</small></button><button data-mode="banquet"><span>03</span><strong>Banquets</strong><small>Experience, Signature & Chef's</small></button><button data-mode="drinks"><span>04</span><strong>Drinks</strong><small>Cocktails, margaritas & mocktails</small></button><button data-mode="dietary"><span>05</span><strong>Dietary</strong><small>Published menu dietary tags</small></button></div><div class="session"><label>SESSION LENGTH <select id="sessionLength"><option>10</option><option selected>20</option><option>30</option><option>50</option><option value="500">ALL 500</option></select></label><button id="start" class="primary">BEGIN TRAINING →</button></div></section></section>
-<section id="quiz" class="screen quiz-screen"><div class="quiztop"><button id="quit" class="textbtn">← EXIT</button><div class="progress"><span id="progressText">1 / 20</span><i><b id="bar"></b></i></div><div class="streak">STREAK <b>🔥 <span id="streak">0</span></b></div></div><div class="card"><div class="meta"><span id="category">À LA CARTE</span><span id="difficulty">CORE</span></div><h2 id="question"></h2><div id="answers" class="answers"></div><div id="feedback" class="feedback"><strong id="feedbackTitle"></strong><p id="explanation"></p><button id="next" class="primary">NEXT QUESTION →</button></div></div></section>
-<section id="results" class="screen result-screen"><div class="resultcard"><span class="eyebrow dark">SHIFT COMPLETE</span><h2 id="resultTitle">Nice work.</h2><div class="scoreRing"><b id="score">0%</b><span>ACCURACY</span></div><p id="resultCopy"></p><div class="resultstats"><div><b id="correctN">0</b><span>CORRECT</span></div><div><b id="wrongN">0</b><span>REVIEW</span></div><div><b id="sessionStreak">0</b><span>BEST STREAK</span></div></div><button id="again" class="primary">TRAIN AGAIN →</button></div></section></main>
-<footer><img src="https://alegredining.com.au/wp-content/uploads/2023/02/cropped-SMALL-ALEGRA-1-3-1.png.webp" alt="Alegre"><p>Alegrelinguo is an internal training aid based on Alegre's published online menus.<br>Not all ingredients are listed online — always follow venue allergy procedure.</p></footer><script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width,initial-scale=1"
+    >
+
+    <meta
+        name="theme-color"
+        content="#5c3025"
+    >
+
+    <title>Alegrelingo — Alegre Menu Training</title>
+
+    <link
+        rel="stylesheet"
+        href="styles.css"
+    >
+</head>
+
+<body>
+
+<header class="sitebar">
+
+    <a
+        class="logo"
+        href="#"
+        aria-label="Alegrelingo home"
+    >
+        <img
+            src="https://alegredining.com.au/wp-content/uploads/2023/02/cropped-SMALL-ALEGRA-1-3-1.png.webp"
+            alt="Alegre Bar & Dining"
+        >
+
+        <span>LINGO</span>
+    </a>
+
+    <nav>
+        <span>MENU TRAINING</span>
+
+        <button
+            id="reset"
+            class="navbtn"
+        >
+            RESET PROGRESS
+        </button>
+    </nav>
+
+</header>
+
+
+<main>
+
+    <!-- ================================
+         HOME
+    ================================= -->
+
+    <section
+        id="home"
+        class="screen active"
+    >
+
+        <div class="venue-hero">
+
+            <img
+                src="https://alegredining.com.au/wp-content/uploads/2023/03/2-1-e1700700308642-768x652.png.webp"
+                alt="Alegre Bar & Dining interior"
+            >
+
+            <div class="shade"></div>
+
+            <div class="hero-copy">
+
+                <span class="eyebrow">
+                    STAFF MENU TRAINING
+                </span>
+
+                <h1>
+                    Know the menu.<br>
+                    <em>Own the floor.</em>
+                </h1>
+
+                <p>
+                    Built for new starters at Alegre Bar & Dining.
+                    Drill dishes, ingredients, dietary tags,
+                    banquets and signature beverages before service.
+                </p>
+
+                <a
+                    href="#trainer"
+                    class="hero-button"
+                >
+                    START TRAINING ↓
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- INTRO / STATS -->
+
+        <section class="intro">
+
+            <div>
+
+                <span class="eyebrow dark">
+                    ALEGRELINGO
+                </span>
+
+                <h2>
+                    Learn Alegre,<br>
+                    one plate at a time.
+                </h2>
+
+            </div>
+
+
+            <div>
+
+                <p>
+                    500 multiple-choice drills built from Alegre's
+                    published Spring à la carte, banquet and beverage
+                    menus. Short sessions make it easy to practise
+                    before a shift.
+                </p>
+
+
+                <div class="stats">
+
+                    <div>
+                        <b id="learned">0</b>
+                        <span>MASTERED</span>
+                    </div>
+
+                    <div>
+                        <b id="accuracy">—</b>
+                        <span>ACCURACY</span>
+                    </div>
+
+                    <div>
+                        <b id="bestStreak">0</b>
+                        <span>BEST STREAK</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TRAINING MODE -->
+
+        <section
+            id="trainer"
+            class="training"
+        >
+
+            <div class="training-head">
+
+                <span class="eyebrow">
+                    CHOOSE YOUR SHIFT
+                </span>
+
+                <h2>
+                    What are we drilling?
+                </h2>
+
+            </div>
+
+
+            <div class="modes">
+
+                <button data-mode="all">
+                    <span>01</span>
+                    <strong>Mixed Shift</strong>
+                    <small>Everything, shuffled</small>
+                </button>
+
+
+                <button data-mode="food">
+                    <span>02</span>
+                    <strong>À La Carte</strong>
+                    <small>Dishes, ingredients & details</small>
+                </button>
+
+
+                <button data-mode="banquet">
+                    <span>03</span>
+                    <strong>Banquets</strong>
+                    <small>
+                        Experience, Signature & Chef's
+                    </small>
+                </button>
+
+
+                <button data-mode="drinks">
+                    <span>04</span>
+                    <strong>Drinks</strong>
+                    <small>
+                        Cocktails, margaritas & mocktails
+                    </small>
+                </button>
+
+
+                <button data-mode="dietary">
+                    <span>05</span>
+                    <strong>Dietary</strong>
+                    <small>
+                        Published menu dietary tags
+                    </small>
+                </button>
+
+            </div>
+
+
+            <div class="session">
+
+                <label>
+
+                    SESSION LENGTH
+
+                    <select id="sessionLength">
+
+                        <option value="10">
+                            10
+                        </option>
+
+                        <option
+                            value="20"
+                            selected
+                        >
+                            20
+                        </option>
+
+                        <option value="30">
+                            30
+                        </option>
+
+                        <option value="50">
+                            50
+                        </option>
+
+                        <option value="500">
+                            MAX UNIQUE ITEMS
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <button
+                    id="start"
+                    class="primary"
+                >
+                    BEGIN TRAINING →
+                </button>
+
+            </div>
+
+        </section>
+
+    </section>
+
+
+
+    <!-- ================================
+         QUIZ
+    ================================= -->
+
+    <section
+        id="quiz"
+        class="screen quiz-screen"
+    >
+
+        <div class="quiztop">
+
+            <button
+                id="quit"
+                class="textbtn"
+            >
+                ← EXIT
+            </button>
+
+
+            <div class="progress">
+
+                <span id="progressText">
+                    1 / 20
+                </span>
+
+                <i>
+                    <b id="bar"></b>
+                </i>
+
+            </div>
+
+
+            <div class="streak">
+
+                STREAK
+
+                <b>
+                    🔥
+                    <span id="streak">
+                        0
+                    </span>
+                </b>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="meta">
+
+                <span id="category">
+                    À LA CARTE
+                </span>
+
+                <span id="difficulty">
+                    CORE
+                </span>
+
+            </div>
+
+
+            <h2 id="question"></h2>
+
+
+            <div
+                id="answers"
+                class="answers"
+            ></div>
+
+
+            <div
+                id="feedback"
+                class="feedback"
+            >
+
+                <strong id="feedbackTitle"></strong>
+
+                <p id="explanation"></p>
+
+                <button
+                    id="next"
+                    class="primary"
+                >
+                    NEXT QUESTION →
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================
+         RESULTS
+    ================================= -->
+
+    <section
+        id="results"
+        class="screen result-screen"
+    >
+
+        <div class="resultcard">
+
+            <span class="eyebrow dark">
+                SHIFT COMPLETE
+            </span>
+
+
+            <h2 id="resultTitle">
+                Nice work.
+            </h2>
+
+
+            <div class="scoreRing">
+
+                <b id="score">
+                    0%
+                </b>
+
+                <span>
+                    ACCURACY
+                </span>
+
+            </div>
+
+
+            <p id="resultCopy"></p>
+
+
+            <div class="resultstats">
+
+                <div>
+
+                    <b id="correctN">
+                        0
+                    </b>
+
+                    <span>
+                        CORRECT
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <b id="wrongN">
+                        0
+                    </b>
+
+                    <span>
+                        REVIEW
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <b id="sessionStreak">
+                        0
+                    </b>
+
+                    <span>
+                        BEST STREAK
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="again"
+                class="primary"
+            >
+                TRAIN AGAIN →
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- ================================
+     FOOTER
+================================= -->
+
+<footer>
+
+    <img
+        src="https://alegredining.com.au/wp-content/uploads/2023/02/cropped-SMALL-ALEGRA-1-3-1.png.webp"
+        alt="Alegre"
+    >
+
+    <p>
+        Alegrelingo is an internal training aid based on
+        Alegre's published online menus.
+        <br>
+        Not all ingredients are listed online — always
+        follow venue allergy procedure.
+    </p>
+
+</footer>
+
+
+
+<!--
+    QUESTION DATA FIRST.
+
+    app.js then uses that data to create rounds.
+-->
+
+<script src="questions.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
